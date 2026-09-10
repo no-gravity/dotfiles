@@ -3,3 +3,8 @@ PS1='$(parent=${PWD%/*}; child=${PWD##*/}; if (( ${#child} < 5 )); then echo -n 
 
 # Make ls pretty:
 alias ls='ls -Alhv --color --time-style=long-iso --group-directories-first'
+
+# Make tab cycle through matching entries
+bind 'Tab: menu-complete'
+bind '"\e[Z": menu-complete-backward' # Shift-Tab
+bind 'set completion-ignore-case on'
